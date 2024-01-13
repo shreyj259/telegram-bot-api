@@ -14,7 +14,7 @@ export const Dashboard = () => {
 
     const banUser=async(id)=>{
         try {
-            const resut=await axios.post('http://localhost:5000/telegram/ban',{userId:id})
+            const resut=await axios.post('https://pro-quill-production.up.railway.app/telegram/ban',{userId:id})
             toast.success('User banned')
             let tempusers=[...users]
             tempusers=tempusers.map((user)=>{
@@ -31,7 +31,7 @@ export const Dashboard = () => {
 
     const unbanUser=async(id)=>{
         try {
-            const resut=await axios.post('http://localhost:5000/telegram/unban',{userId:id})
+            const resut=await axios.post('https://pro-quill-production.up.railway.app/telegram/unban',{userId:id})
             toast.success('User unbanned')
             let tempusers=[...users]
             tempusers=tempusers.map((user)=>{
@@ -47,7 +47,7 @@ export const Dashboard = () => {
 
     const removeUser=async(id)=>{
         try {
-            const resut=await axios.post('http://localhost:5000/telegram/remove',{userId:id})
+            const resut=await axios.post('https://pro-quill-production.up.railway.app/telegram/remove',{userId:id})
             toast.success('User Removed')
             let tempusers=[...users]
             tempusers=tempusers.filter((user)=>user.chatId!=id)
@@ -59,7 +59,7 @@ export const Dashboard = () => {
 
     const fetchUsers=async()=>{
         try {
-            const result=await axios.get('http://localhost:5000/telegram')
+            const result=await axios.get('https://pro-quill-production.up.railway.app/telegram')
             setUser(result.data)
             console.log(result.data)
         } catch (error) {

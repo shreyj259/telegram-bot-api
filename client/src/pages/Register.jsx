@@ -21,7 +21,7 @@ const Register = () => {
   const register=async()=>{
     try {
       setIsLoading(false)
-      const res=await axios.post("http://localhost:3000/api/v1/auth/register",user)
+      const res=await axios.post("https://pro-quill-production.up.railway.app/register",user)
       navigate('/dashboard')
     } catch (error) {
       console.log(error)

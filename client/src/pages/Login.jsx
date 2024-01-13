@@ -15,7 +15,7 @@ const Login = () => {
   const login=async()=>{
     try {
       setIsLoading(true)
-      const res=await axios.post("http://localhost:3000/api/v1/auth/login",user)
+      const res=await axios.post("https://pro-quill-production.up.railway.app/login",user)
       navigate('/dashboard')
     } catch (error) {
       console.log(error)
