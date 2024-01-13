@@ -11,7 +11,7 @@ const Navbar = () => {
   const handleLogout=async()=>{
     try {
       setIsLoading(true)
-      await axios.get("http://localhost:5000/logout")
+      await axios.get("https://pro-quill-production.up.railway.app/logout")
       navigate('/')
     } catch (error) {
       console.log(error)
