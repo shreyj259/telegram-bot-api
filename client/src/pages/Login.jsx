@@ -13,16 +13,6 @@ const Login = () => {
   })
 
   const login=async()=>{
-    /* try {
-      setIsLoading(true)
-      const res=await axios.post("https://pro-quill-production.up.railway.app/login",user)
-      navigate('/dashboard')
-    } catch (error) {
-      console.log(error)
-    }finally{
-      setIsLoading(false)
-    } */
-
     try {
       window.open('https://pro-quill-production.up.railway.app/',"_self")
       console.log(result);
@@ -45,20 +35,9 @@ const Login = () => {
           }}
         >
           <FormHeading>Login Here</FormHeading>
-{/* 
-          <CustomLabel>Email</CustomLabel>
-          <CustomInput  onChange={(e)=>setUser({...user,email:e.target.value})}/>
 
-          <CustomLabel>Password</CustomLabel>
-          <CustomInput type="password" onChange={(e)=>setUser({...user,password:e.target.value})}/>
- */}
-          <PrimaryButton disabled={isLoading} onClick={login} variant="contained">Login</PrimaryButton>
+          <PrimaryButton disabled={isLoading} onClick={login} variant="contained">Login with Google</PrimaryButton>
 
-          {/* <CustomLabel>
-            Don't Have an Account? <Link className="primary-color-text" to="/register">
-               Register here
-            </Link>
-          </CustomLabel> */}
         </Box>
       </Grid>
     </Grid>

@@ -21,7 +21,7 @@ export class AppService {
    }
 
    getUser(req){
-    console.log(req.user)
+    return req.user;
    }
 
   async create(data){

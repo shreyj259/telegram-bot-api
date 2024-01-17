@@ -1,6 +1,5 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom"
 import Login from "./pages/Login"
-import Register from "./pages/Register"
 import { ThemeProvider } from "@mui/material"
 import { theme } from "./utils/MuiComponents"
 import './App.css'
@@ -17,7 +16,6 @@ function App() {
     <ToastContainer />
       <Routes>
         <Route path="/dashboard" element={<Dashboard/>} />
-        <Route path="/register" element={<Register/>} />
         <Route path="/" element={<Login />} />
       </Routes>
     </ThemeProvider>
