@@ -10,7 +10,7 @@ export class AppService {
     private adminModel=mongoose.Model<Admin>
    ){ }
 
-   googleLogin(req,res){
+   googleLogin(req){
     if(!req.user){
       return "No user from google"
     }

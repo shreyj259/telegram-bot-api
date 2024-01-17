@@ -21,8 +21,8 @@ export class AppController {
   
   @Get('auth/google/callback')
   @UseGuards(AuthGuard('google'))
-  googleAuthRedirect(@Req() req, @Res() res){
-    return this.appService.googleLogin(req,res)
+  googleAuthRedirect(@Req() req){
+    return this.appService.googleLogin(req)
   }
 
   @Get('getuser')
