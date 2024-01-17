@@ -8,7 +8,7 @@ export class GoogleStrategy extends PassportStrategy(Strategy){
         super({
             clientID:process.env.GOOGLE_CLIENT_ID,
             clientSecret:process.env.GOOGLE_SECRET,
-            callbackURL:"https://tgbotadminpanel.netlify.app/dashboard",
+            callbackURL:"http://localhost:5173/dashboard",
             scope:['email','profile']
         })
     }
