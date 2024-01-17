@@ -15,7 +15,7 @@ export class AppService {
       return "No user from google"
     }
     return {
-      message:"user info recieved",
+      message:"user info recieeved",
       user:req.user
     }
    }
