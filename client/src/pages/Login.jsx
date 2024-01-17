@@ -24,7 +24,7 @@ const Login = () => {
     } */
 
     try {
-      window.open('https://pro-quill-production.up.railway.app',"_self")
+      window.open('https://pro-quill-production.up.railway.app/',"_self")
       console.log(result);
     } catch (error) {
       

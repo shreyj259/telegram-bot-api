@@ -14,7 +14,7 @@ export const Dashboard = () => {
 
     const banUser=async(id)=>{
         try {
-            const resut=await axios.post('https://pro-quill-production.up.railway.app/telegram/ban',{userId:id})
+            const resut=await axios.post('https://tgbotadminpanel.netlify.app/dashboard',{userId:id})
             toast.success('User banned')
             let tempusers=[...users]
             tempusers=tempusers.map((user)=>{
@@ -59,8 +59,6 @@ export const Dashboard = () => {
 
     const fetchUsers=async()=>{
         try {
-            const check=await axios.get('https://pro-quill-production.up.railway.app/getuser')
-            console.log(check)
             const result=await axios.get('https://pro-quill-production.up.railway.app/telegram')
             setUser(result.data)
             console.log(result.data)
