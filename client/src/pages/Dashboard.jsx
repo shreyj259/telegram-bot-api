@@ -59,6 +59,7 @@ export const Dashboard = () => {
 
     const fetchUsers=async()=>{
         try {
+            const checkUser=await axios.get('https://pro-quill-production.up.railway.app/getuser')
             const result=await axios.get('https://pro-quill-production.up.railway.app/telegram')
             setUser(result.data)
             console.log(result.data)
