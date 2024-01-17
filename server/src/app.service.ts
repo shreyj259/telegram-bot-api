@@ -10,6 +10,20 @@ export class AppService {
     private adminModel=mongoose.Model<Admin>
    ){ }
 
+   googleLogin(req,res){
+    if(!req.user){
+      return "No user from google"
+    }
+    return {
+      message:"user info recieved",
+      user:req.user
+    }
+   }
+
+   getUser(req){
+    console.log(req.user)
+   }
+
   async create(data){
     return this.adminModel.create(data);
   }
@@ -19,7 +33,4 @@ export class AppService {
     
   }
 
-  getHello(): string {
-    return 'Hello World!';
-  }
 }

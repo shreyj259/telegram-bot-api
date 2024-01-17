@@ -1,9 +1,9 @@
-import { BadRequestException, Body, Controller, Get, Post, Res } from '@nestjs/common';
+import { BadRequestException, Body, Controller, Get, Post, Req, Res, UseGuards } from '@nestjs/common';
 import { AppService } from './app.service';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import { Response } from 'express';
-
+import { AuthGuard } from '@nestjs/passport';
 
 @Controller()
 export class AppController {
@@ -11,7 +11,26 @@ export class AppController {
   private jwtService: JwtService
     ) {}
 
-  @Post('register')
+  @Get()
+  @UseGuards(AuthGuard('google'))
+  async googleAuth(@Req() req){
+
+  } 
+
+
+  
+  @Get('auth/google/callback')
+  @UseGuards(AuthGuard('google'))
+  googleAuthRedirect(@Req() req, @Res() res){
+    return this.appService.googleLogin(req,res)
+  }
+
+  @Get('getuser')
+  getuser(@Req() req){
+    return this.appService.getUser(req)
+  }
+
+  /* @Post('register')
   async register(
     @Body('name') name: string,
     @Body('email') email: string,
@@ -60,12 +79,7 @@ export class AppController {
       return{
         message:"Logged out successfully"
       }
-    }
+    } */
 
 
-
-  @Get()
-  getHello(): string {
-    return this.appService.getHello();
-  }
 }
